@@ -1,0 +1,17 @@
+{
+    "token": "OTM2MDE4ODczMDIxNTE3ODQ2.YfHFgQ.rZYFd6x4MVX1ENZv1rR37I-wIAM",
+    "status": "Ninja Competitive League",
+    "prefix": "!",
+    "guild": "936014947316564028",
+    "genChannel": "936017253114200075",
+    "matchesChannel": "940708596835041420",
+    "notiRole": "League Notifications",
+    "notiRoleId": "940398074604421152",
+    "matches": [660, 900, 1080, 1140, 1200],
+    "nextMatch": 2,
+    "reportsCategory": "937082916368973834",
+    "annaId": "511603215591276584",
+    "leaderboardChannel": "940468167745097759",
+    "leaderboardMessage": "942632609916268554",
+    "pointsChannel": "942630290231287859"
+}
