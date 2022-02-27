@@ -4,13 +4,6 @@ const updateLeaderboard = require("../helpers/updateLeaderboard");
 
 module.exports = async (interaction) => {
 
-    if (interaction.customId == 'register'){
-        guild.roles.fetch('938577503323291719').then((role) => { interaction.member.roles.add(role) });
-        genChannel.send(`<@${interaction.member.id}> has become a league member!`);
-        interaction.deferUpdate();
-        return;
-    }
-
     const optionsArray = interaction.message.components[0].components[0].options;
     const rep = client.channels.cache.get(interaction.channelId);
     const roundName = interaction.message.embeds[0].title;

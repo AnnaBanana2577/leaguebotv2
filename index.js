@@ -58,6 +58,13 @@ client.on('message', message => {
 });
 
 client.on("interactionCreate", async (interaction) => {
+    if (interaction.customId == 'register'){
+        guild.roles.fetch('938577503323291719').then((role) => { interaction.member.roles.add(role) });
+        genChannel.send(`<@${interaction.member.id}> has become a league member!`);
+        interaction.deferUpdate();
+        return;
+    }
+    
     if (interaction.member.id !== config.annaId) { return; }
     if (interaction.isButton()) { require('./core/buttonHandler')(interaction); }
     if (interaction.isSelectMenu()) { require('./core/menuHandler')(interaction); }
