@@ -14,7 +14,9 @@ module.exports = (matchTime) => {
     hours = ("0" + hours).slice(-2);
     minutes = ("0" + minutes).slice(-2);
 
-    const matchName = `${hours}:${minutes}${ampm} EST`;
+    const epoch = config.epoch[nMatch];
+    //const matchName = `${hours}:${minutes}${ampm} EST`;
+    const matchName = `<t:${config.epoch[nMatch]}:t>`;
 
     hours = Math.floor(dist / 60);          
     minutes = dist % 60;

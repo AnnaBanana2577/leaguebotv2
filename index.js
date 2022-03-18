@@ -49,6 +49,10 @@ client.on('message', message => {
         case 'register':
             require('./commands/register')(message);
             break;
+        case 'times':
+            if (message.author.id !== config.annaId) { break; }
+            require('./commands/times')(message);
+            break;
         case 'reset':
             if (message.author.id !== config.annaId) { break; }
             leaderboard = {};

@@ -11,6 +11,6 @@ module.exports = async (message) => {
 
     const playerNames = await getNamesFromIds(queue);
     const output = playerNames.join(' - ');
-    message.channel.send(`The following players have joined the ${nextMatch.name} match: \n${output}`);
+    message.channel.send(`The following ${queue.length} players have joined the ${nextMatch.name} match: \n${output}`);
 
 }

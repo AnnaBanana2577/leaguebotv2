@@ -8,27 +8,9 @@ const updateLeaderboard = require("../helpers/updateLeaderboard");
 const serverNames = ['juicy fruit', 'lemon water', 'orange crush', 'dogs', 'cats', 'mouse', 'chicken', 'diamond', 'cattle', 'kitchen', 'dumpster', 'famine', 'wheat'];
 const passwords = ['apple', 'pear', 'grape', 'kiwi', 'berry', 'keyboard', 'spine', 'catfish', 'vanilla', 'cream', 'cookie', 'pencil', 'flower', 'gate', 'door'];
 
-module.exports = async (matchDetails, players) => {
-    let reportName = matchDetails.name.replace(' EST', '').replace(':','-');
-        //Quick and dirty epoch grabber
-        let epoch = '';
-        switch (matchDetails.time) {
-            case 660: //11am
-                epoch = '1645200000';
-                break;
-            case 900: //3pm
-                epoch = '1645214400';
-                break;
-            case 1080: //6pm
-                epoch = '1645225200';
-                break;
-            case 1140: //7pm
-                epoch = '1645228800';
-                break;
-            case 1200: //8pm
-                epoch = '1645232400';
-                break;
-        }
+module.exports = async (matchDetails, players, matchNumber) => {
+    let reportName = `Match #${matchNumber}`;
+    let epoch = config.epoch[matchNumber - 1];
 
     //Get Player Count
     let playerCount = 0;
